@@ -6,3 +6,4 @@ WORDS = ["python", "git", "github", "snowman", "meltdown"]
 
 if __name__ == "__main__":
     game_logic.play_game()
+    game_logic.play_another_round()
