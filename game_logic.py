@@ -52,7 +52,8 @@ def play_game():
             print("Correct!")
             if all(letter in guessed_letters for letter in secret_word):
                 display_game_state(mistakes, secret_word, guessed_letters)
-                print("You saved the snowman from melting! The word was:", secret_word)
+                print("You saved the snowman from melting! "
+                      f"The word was: {secret_word}")
                 return
         else:
             print("Wrong!")
@@ -64,6 +65,7 @@ def play_game():
 
 
 def play_another_round():
+    """Ask the player if they want to replay and loop until they decline."""
     while True:
         rerun = input("Would you like to play again? (y/n): ").lower()
         if rerun == 'y':
