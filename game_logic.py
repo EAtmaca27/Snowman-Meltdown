@@ -10,7 +10,7 @@ def get_random_word():
 
 
 def display_game_state(mistakes, secret_word, guessed_letters):
-    # Display the current game state for number of mistakes
+    """Display the current game state for number of mistakes."""
     print(STAGES[mistakes])
     display_word = ""
     for letter in secret_word:
@@ -23,6 +23,11 @@ def display_game_state(mistakes, secret_word, guessed_letters):
 
 
 def play_game():
+    """
+    Main game loop.
+    Game continues as long as stage 3 is not reached.
+    :return: None
+    """
     secret_word = get_random_word()
     guessed_letters = []
     mistakes = 0
