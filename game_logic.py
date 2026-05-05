@@ -38,6 +38,10 @@ def play_game():
     while mistakes < len(STAGES) - 1:
         guess = input("Guess a letter: ").lower()
 
+        if not guess.isalpha() or len(guess) != 1:
+            print("Please enter a single alphabetical character.")
+            continue
+
         if guess in guessed_letters:
             print(f"'{guess}' was already guessed! Try a different letter.")
             continue
@@ -57,3 +61,13 @@ def play_game():
         display_game_state(mistakes, secret_word, guessed_letters)
 
     print("Game over! The snowman has melted. The word was:", secret_word)
+
+
+def play_another_round():
+    while True:
+        rerun = input("Would you like to play again? (y/n): ").lower()
+        if rerun == 'y':
+            play_game()
+        else:
+            print("Thanks for playing!")
+            break
